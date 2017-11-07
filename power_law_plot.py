@@ -92,8 +92,8 @@ def plot_distribution(a, l, cumulative=False, log=False, save=False):
             if log: plt.savefig("images/cumulative_L{}_log.png".format(l))
             else: plt.savefig("images/cumulative_L{}.png".format(l))
         else:
-            if log: plt.savefig("images/distribution{}_log.png".format(l))
-            else: plt.savefig("images/distribution{}.png".format(l))
+            if log: plt.savefig("images/distribution_L{}_log.png".format(l))
+            else: plt.savefig("images/distribution_L{}.png".format(l))
         plt.clf()
     else:
         plt.show()
