@@ -3,5 +3,5 @@
 
  The script saves the plots of diferent alphas for every given L in log-log or normal scale.
 
-![Cumulative](./images/cumulative_L100_log.png?raw=true) ![Distribution](./images/distribution_L100_log?raw=true)
+![alt text](https://github.com/aguscerdo/power_law_plot/blob/master/images/cumulative_L100_log.png) ![alt text](https://github.com/aguscerdo/power_law_plot/blob/master/images/distribution_L100_log.png)
 
