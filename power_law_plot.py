@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from os import path, mkdir
 
 
 def get_c(x, a):
@@ -87,11 +88,12 @@ def plot_distribution(a, l, cumulative=False, log=False, save=False):
 
     if save:
         if cumulative:
-            if log: plt.savefig("cumulative_L{}_log.png".format(l))
-            else: plt.savefig("cumulative_L{}.png".format(l))
+
+            if log: plt.savefig("images/cumulative_L{}_log.png".format(l))
+            else: plt.savefig("images/cumulative_L{}.png".format(l))
         else:
-            if log: plt.savefig("distribution{}_log.png".format(l))
-            else: plt.savefig("distribution{}.png".format(l))
+            if log: plt.savefig("images/distribution{}_log.png".format(l))
+            else: plt.savefig("images/distribution{}.png".format(l))
         plt.clf()
     else:
         plt.show()
@@ -99,6 +101,9 @@ def plot_distribution(a, l, cumulative=False, log=False, save=False):
 
 
 def save_batch(alphas, Ls, log=True, normal=False):
+    if not path.exists("images"):
+        mkdir("images")
+
     if not isinstance(Ls, list):
         Ls = [Ls]
 
@@ -111,14 +116,11 @@ def save_batch(alphas, Ls, log=True, normal=False):
             plot_distribution(alphas, l, cumulative=False, log=True, save=True)
             plot_distribution(alphas, l, cumulative=True, log=True, save=True)
 
-
-
-
         print("L = {} saved".format(l))
 
     print("All files saved")
 
-##-------------------------------------------------##
+##-----------------------------------------------------------##
 
 alpha = [1.2, 1.5, 2.0, 2.2]
 L = [100, 500, 1500]
